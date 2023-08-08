@@ -51,6 +51,17 @@ var employees = [
 */
 
 //Code Here
+// let employeeUpdater = () => { }
+function employeeUpdater() {
+  return newArr = employees.filter((employee) => {
+    if (employee.firstName === "Lorie") {
+      employee.department = "HR"
+    }
+    if (employee.firstName !== "Theo") {
+      return employee
+    }
+  })
+}
 
 ////////// PROBLEM 2 //////////
 
@@ -67,6 +78,10 @@ var workplaceAccidents = [12, 56, 44, 3, 29, 56, 56, 3, 7, 12];
 */
 
 //Code Here
+function removeDuplicates(workplaceAccidents) {
+  return workplaceAccidents.filter((item, index) => workplaceAccidents.indexOf(item) === item)
+}
+console.log(removeDuplicates(workplaceAccidents))
 
 ////////// PROBLEM 3 //////////
 
@@ -133,6 +148,22 @@ var myCar = {
 */
 
 //Code Here
+function recordCleaner() {
+  myCar.accidents.forEach((record, i) => {
+    myCar.accidents[i].atFaultForAccident = false
+  })
+}
+
+// console.log(myCar)
+// recordCleaner()
+// console.log(myCar)
+
+// const recordCleaner = () => {
+//   myCar.accidents.map((obj) => {
+//     obj.atFaultForAccident = false;
+//     return obj;
+//   });
+// };
 
 ////////// PROBLEM 5 //////////
 
@@ -146,7 +177,7 @@ var numsArr = [
 
 /*
   Above is an array of arrays. Use two for loops.
-    1. Write a function called 'looper'. 
+    1. Write a function called 'looper'.
     2. 'looper' should loop over the arrays.
     3.  If the number is odd, replace it with 'odd'.
         If the number is even, replace it with 'even'.
@@ -154,3 +185,33 @@ var numsArr = [
 */
 
 //Code Here
+const looper = () => {
+  for (let i = 0; i < numsArr.length; i++) {
+    for (let j = 0; j < numsArr[i].length; j++) {
+      if (numsArr[i][j] % 2 === 0) {
+        numsArr[i].splice(j, 1, 'even')
+      } else {
+        numsArr[i].splice(j, 1, 'odd')
+      }
+    }
+  }
+  return numsArr
+}
+
+// const looper = () => {
+//   numsArr.forEach((arr, i) => {
+//     arr.forEach((num, j) => {
+//       num % 2 === 0 ? numsArr[i][j] = 'even' : numsArr[i][j] = 'odd'
+//     })
+//   })
+//   return numsArr
+// }
+
+// const looper = function () {
+//   return numsArr.map((arr) => {
+//     arr.forEach((val, i) => {
+//       arr[i] = val % 2 ? "odd" : "even";
+//     });
+//     return arr
+//   });
+// };
