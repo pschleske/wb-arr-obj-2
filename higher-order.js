@@ -59,9 +59,9 @@ const populations = [8175133, 3792621, 2695598, 2100263];
 */
 
 //Code Here
-let totalPopulation = populations.reduce(acc, el, index) => {
-  return acc + el
-}
+// let totalPopulation = populations.reduce(acc, el, index) => {
+//   return acc + el
+// }
 
 ////////// PROBLEM 4 //////////
 
@@ -103,7 +103,9 @@ const monstersInYourPocket = [
 */
 
 //Code Here
-// let myStrongest = monstersInYourPocket.filter()
+let myStrongest = monstersInYourPocket.filter(monster => {
+  return monster.CP > 200
+})
 
 ////////// PROBLEM 5 //////////
 
