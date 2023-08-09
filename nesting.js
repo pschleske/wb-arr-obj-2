@@ -142,8 +142,18 @@ var cat = {
 */
 
 //Code Here
-var grumpyActivity;
-var fluffy2ndFriend;
+var grumpyActivity = function activity(cat) {
+  return cat.catFriends[0].activities.push([1])
+}
+var fluffy2ndFriend = function name(cat) {
+  return cat.catFriends[0][1].names.push()
+}
+
+// function recordCleaner() {
+//   myCar.accidents.forEach((record, i) => {
+//     myCar.accidents[i].atFaultForAccident = false
+//   })
+// }
 
 ////////// PROBLEM 4 //////////
 
