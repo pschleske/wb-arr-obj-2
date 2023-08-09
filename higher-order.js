@@ -59,9 +59,16 @@ const populations = [8175133, 3792621, 2695598, 2100263];
 */
 
 //Code Here
-// let totalPopulation = populations.reduce(acc, el, index) => {
-//   return acc + el
+let totalPopulation = populations.reduce((total, num) => total + num)
+
+// function totalPopulation(total, num,) {
+//   return total + num
 // }
+
+// let bobsTotal = purchases.reduce((acc, curr) => {
+//   return curr.owner === "Bob" ? acc + curr.price : acc;
+// }, 0);
+
 
 ////////// PROBLEM 4 //////////
 
@@ -128,10 +135,14 @@ const orders = [
   Use a higher order method to get all the order totals after adding in the sales tax (given to you as a tax rate, hint: you'll need to do some multiplication). Your answer should be an array of numbers, one total for each order.
 */
 
-let ordersTotal = orders.reduce((acc, el, index) => {
-  // console.log(el.price * el.tax + el.price)
-  return acc * el + el
-}, 0)
+// let orderTotals = orders.map(order => (order.price * order.tax) + order.price);
+let orderTotals = orders.map(order => order.price * (1 + order.tax));
+
+// this is what I had before solution provided
+// let ordersTotal = orders.reduce((acc, el, index) => {
+//   // console.log(el.price * el.tax + el.price)
+//   return acc * el + el
+// }, 0)
 
 ////////// PROBLEM 6 //////////
 
@@ -165,3 +176,6 @@ const purchases = [
 */
 
 // let bobsTotal = purchases = ((acc, el, index) => { }, 0)
+let bobsTotal = purchases.reduce((acc, curr) => {
+  return curr.owner === "Bob" ? acc + curr.price : acc;
+}, 0);

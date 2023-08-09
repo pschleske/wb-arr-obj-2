@@ -63,6 +63,25 @@ function employeeUpdater() {
   })
 }
 
+// function employeeUpdater() {
+//   let idx;
+//   let newArr = employees.map((emp, i) => {
+//     if (emp.firstName === "Lorie") emp.department = "HR";
+//     if (emp.firstName === "Theo") idx = i;
+//     return emp;
+//   });
+
+//   newArr.splice(idx, 1);
+//   return newArr;
+// }
+
+// function employeeUpdater() {
+//   return employees.filter(emp => emp.firstName !== "Theo").map((emp) => {
+//     if (emp.firstName === "Lorie") emp.department = "HR";
+//     return emp;
+//   });
+// }
+
 ////////// PROBLEM 2 //////////
 
 // Do not edit the code below.
@@ -78,10 +97,25 @@ var workplaceAccidents = [12, 56, 44, 3, 29, 56, 56, 3, 7, 12];
 */
 
 //Code Here
-function removeDuplicates(workplaceAccidents) {
-  return workplaceAccidents.filter((item, index) => workplaceAccidents.indexOf(item) === item)
+function removeDuplicates() {
+  workplaceAccidents.forEach((id, i) => {
+    for (let j = i + 1; j < workplaceAccidents.length; j++) {
+      if (id === workplaceAccidents[j]) {
+        workplaceAccidents.splice(j, 1);
+        j--;
+      }
+    }
+  });
+  return workplaceAccidents;
 }
-console.log(removeDuplicates(workplaceAccidents))
+// not sure this one works
+// function removeDuplicates(workplaceAccidents) {
+//   return workplaceAccidents.filter((item, index) => workplaceAccidents.indexOf(item) === item)
+// }
+// console.log(removeDuplicates(workplaceAccidents))
+
+// const removeDuplicates = () => [...new Set(workplaceAccidents)]
+
 
 ////////// PROBLEM 3 //////////
 
@@ -215,3 +249,5 @@ const looper = () => {
 //     return arr
 //   });
 // };
+
+// const looper = () => numsArr.map(arr => arr.map(num => num % 2 === 0 ? "even" : "odd"));
