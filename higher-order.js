@@ -175,7 +175,17 @@ const purchases = [
   Use a high order method to create to get the sum of bobsTotal.
 */
 
-// let bobsTotal = purchases = ((acc, el, index) => { }, 0)
-let bobsTotal = purchases.reduce((acc, curr) => {
-  return curr.owner === "Bob" ? acc + curr.price : acc;
-}, 0);
+// let bobsTotal = purchases = ((acc, el) => { }, 0)
+// let bobsTotal = purchases.reduce((acc, curr) => {
+//   return curr.owner === "Bob" ? acc + curr.price : acc;
+// }, 0);
+
+let bobsTotal = purchases.reduce((total, arr) => {
+  if (arr.owner === "Bob") {
+    return total + arr.price
+  } else {
+    return total
+  }
+}, 0)
+
+// console.log(bobsTotal)
