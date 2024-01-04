@@ -142,12 +142,10 @@ var cat = {
 */
 
 //Code Here
-var grumpyActivity = function activity(cat) {
-  return cat.catFriends[0].activities.push([1])
-}
-var fluffy2ndFriend = function name(cat) {
-  return cat.catFriends[0][1].names.push()
-}
+const grumpyActivity = cat.catFriends[0].activities.push([1])
+
+const fluffy2ndFriend = cat.catFriends[0][1].name.push([1])
+
 
 // function recordCleaner() {
 //   myCar.accidents.forEach((record, i) => {
